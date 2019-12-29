@@ -5,9 +5,6 @@ import 'hand_hour.dart';
 import 'hand_minute.dart';
 import 'hand_second.dart';
 
-
-
-
 class ClockHands extends StatelessWidget {
   final DateTime dateTime;
   final bool showHourHandleHeartShape;
@@ -21,27 +18,24 @@ class ClockHands extends StatelessWidget {
         child: new Container(
             width: double.infinity,
             padding: const EdgeInsets.all(20.0),
-            child: new Stack(
-                fit: StackFit.expand,
-                children: <Widget>[
-                  new CustomPaint( painter: new HourHandPainter(
-                      hours: dateTime.hour, minutes: dateTime.minute),
-                  ),
-                  new CustomPaint(painter: new MinuteHandPainter(
-                      minutes: dateTime.minute, seconds: dateTime.second),
-                  ),
-                  new CustomPaint(painter: new SecondHandPainter(seconds: dateTime.second),
-                  ),
-                ]
-            )
-        )
-
-    );
+            child: new Stack(fit: StackFit.expand, children: <Widget>[
+              new CustomPaint(
+                painter: new HourHandPainter(
+                    hours: dateTime.hour, minutes: dateTime.minute),
+              ),
+              new CustomPaint(
+                painter: new MinuteHandPainter(
+                    minutes: dateTime.minute, seconds: dateTime.second),
+              ),
+              new CustomPaint(
+                painter: new SecondHandPainter(seconds: dateTime.second),
+              ),
+            ])));
   }
 }
 
 //class _ClockHandState extends State<ClockHands> {
-  Timer _timer;
+Timer _timer;
 //
 //  _ClockHandState();
 //
@@ -68,4 +62,3 @@ class ClockHands extends StatelessWidget {
 //  Widget build(BuildContext context) {
 //  }
 //}
-

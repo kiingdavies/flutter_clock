@@ -3,8 +3,7 @@ import 'package:flutter/material.dart';
 import 'clock_dial_painter.dart';
 import 'clock_hands.dart';
 
-class ClockFace extends StatelessWidget{
-
+class ClockFace extends StatelessWidget {
   final DateTime dateTime;
   final ClockText clockText;
   ClockFace({this.clockText = ClockText.arabic, this.dateTime});
@@ -19,9 +18,8 @@ class ClockFace extends StatelessWidget{
           width: double.infinity,
           decoration: new BoxDecoration(
             shape: BoxShape.circle,
-            color: Colors.white,
+            color: Color(0xfff4f9fd),
           ),
-
           child: new Stack(
             children: <Widget>[
               //dial and numbers
@@ -29,20 +27,16 @@ class ClockFace extends StatelessWidget{
                 width: double.infinity,
                 height: double.infinity,
                 padding: const EdgeInsets.all(10.0),
-                child:new CustomPaint(
+                child: new CustomPaint(
                   painter: new ClockDialPainter(clockText: clockText),
                 ),
               ),
 
-              new ClockHands(dateTime:dateTime),
-
+              new ClockHands(dateTime: dateTime),
             ],
           ),
         ),
-
       ),
     );
   }
 }
-
-

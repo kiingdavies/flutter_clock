@@ -1,4 +1,1 @@
-enum ClockText{
-  roman,
-  arabic
-}
+enum ClockText { roman, arabic }
